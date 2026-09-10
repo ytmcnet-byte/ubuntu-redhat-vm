@@ -1,0 +1,13 @@
+schemaVersion: 2.2.0
+
+components:
+  - name: vps
+    container:
+      image: ubuntu:24.04
+      mountSources: true
+      command:
+        - sleep
+      args:
+        - infinity
+      memoryLimit: 30Gi
+      cpuLimit: "8"
