@@ -1,13 +1,16 @@
 schemaVersion: 2.2.0
 
+metadata:
+  name: ubuntu-podman
+
 components:
-  - name: vps
+  - name: dev
     container:
-      image: ubuntu:24.04
+      image: ubuntu:22.04
       mountSources: true
-      command:
-        - sleep
-      args:
-        - infinity
-      memoryLimit: 30Gi
-      cpuLimit: "8"
+
+      cpuRequest: "3"
+      cpuLimit: "3"
+
+      memoryRequest: "28Gi"
+      memoryLimit: "30Gi"
