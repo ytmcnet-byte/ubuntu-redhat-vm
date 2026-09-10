@@ -1,16 +1,14 @@
 schemaVersion: 2.2.0
-
 metadata:
-  name: ubuntu-podman
-
+  name: ubuntu-2204-vps-max
+  version: 1.0.0
+  displayName: Ubuntu 22.04 Max Resource VPS
 components:
-  - name: dev
+  - name: ubuntu-dev
     container:
       image: ubuntu:22.04
-      mountSources: true
-
-      cpuRequest: "3"
-      cpuLimit: "3"
-
-      memoryRequest: "28Gi"
-      memoryLimit: "30Gi"
+      memoryLimit: 26Gi
+      memoryRequest: 4Gi
+      cpuLimit: 2500m
+      cpuRequest: 500m
+      command: ['/bin/sh', '-c', 'trap : TERM INT; sleep infinity & wait']
